@@ -3,7 +3,9 @@ using UnityEngine;
 public class SpaceshipController : MonoBehaviour
 {
     public float moveSpeed = 2.0f;
-    public GameObject Bullet;
+    public GameObject bullet;
+
+    private float timeBetweenShots = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,7 @@ public class SpaceshipController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timeBetweenShots += Time.deltaTime;
         if (Input.GetKeyDown((KeyCode.RightArrow)))
         {
             transform.Translate(moveSpeed * Vector2.right);
@@ -23,9 +26,10 @@ public class SpaceshipController : MonoBehaviour
             transform.Translate(moveSpeed * Vector2.left);    
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && timeBetweenShots > 1.0f)
         {
-            Instantiate(Bullet, transform.position, Bullet.transform.rotation);
+            timeBetweenShots = 0;
+            Instantiate(bullet, transform.position, bullet.transform.rotation);
         }
 
         if (transform.position.x < -4.5)

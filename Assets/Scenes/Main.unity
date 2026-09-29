@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  Bullet: {fileID: 5493552190615777991, guid: 5d58938e646549c4ea721e16dab60b02, type: 3}
+  bullet: {fileID: 5493552190615777991, guid: 5d58938e646549c4ea721e16dab60b02, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
