@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : Enemy
 {
     // Start is called before the first frame update
     void Start()
@@ -14,5 +14,15 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public override void Move()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void DestroyOnOutOfBounds()
+    {
+        throw new System.NotImplementedException();
     }
 }
