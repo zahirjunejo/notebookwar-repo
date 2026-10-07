@@ -13,12 +13,17 @@ public class EnemyController : Enemy
     // Update is called once per frame
     void Update()
     {
-        
+        Move();
     }
 
     public override void Move()
     {
-        throw new System.NotImplementedException();
+        frameCount++;
+        if (frameCount > 30)
+        {
+            transform.Translate(moveSpeed * Vector2.up);
+            frameCount = 0;
+        }
     }
 
     public override void DestroyOnOutOfBounds()
