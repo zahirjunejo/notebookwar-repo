@@ -14,6 +14,7 @@ public class EnemyController : Enemy
     void Update()
     {
         Move();
+        DestroyOnOutOfBounds();
     }
 
     public override void Move()
@@ -28,6 +29,9 @@ public class EnemyController : Enemy
 
     public override void DestroyOnOutOfBounds()
     {
-        throw new System.NotImplementedException();
+        if (transform.position.y > 10 || transform.position.y < -10)
+        {
+            Destroy(gameObject);
+        }
     }
 }
