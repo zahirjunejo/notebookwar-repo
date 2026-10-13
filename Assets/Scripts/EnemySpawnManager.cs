@@ -11,9 +11,15 @@ public class EnemySpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SpawnEnemy();
     }
 
+    void SpawnEnemy()
+    {
+        int selectedColumn = Random.Range(0, columns.Length);
+        Instantiate(enemyToSpawn, new Vector2(columns[selectedColumn], 4.5f), enemyToSpawn.transform.rotation);
+    }
+    
     // Update is called once per frame
     void Update()
     {
